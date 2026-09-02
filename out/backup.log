@@ -1,0 +1,17 @@
+cd "." && mkdir -p backup && node scripts/d1.mjs export --remote --output "backup/20260902-1140.sql" && ls -la "backup/20260902-1140.sql" && grep -c "^INSERT" "backup/20260902-1140.sql" | sed 's/^/INSERT rows: /'
+
+ ⛅️ wrangler 4.125.0 (update available 4.128.0)
+───────────────────────────────────────────────
+Resource location: remote 
+
+? ⚠️ This process may take some time, during which your D1 database will be unavailable to serve queries.
+  Ok to proceed?
+🤖 Using fallback value in non-interactive context: yes
+🌀 Executing on remote database memory-lab-2sep (21447e13-a253-4be2-9bf6-00e4be357160):
+├ Creating export
+│
+├ Downloading SQL to backup/20260902-1140.sql
+│
+🌀 Downloaded to backup/20260902-1140.sql successfully!
+-rw-r--r--@ 1 beta  staff  17196 Sep  2 11:40 backup/20260902-1140.sql
+INSERT rows: 46

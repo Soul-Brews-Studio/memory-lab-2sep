@@ -1,0 +1,23 @@
+$ tools/call list_clients {}  [126 ms]
+7 client(s) in 24h
+claude.ai · Claude · 8 req / 0 tool calls · last 2026-09-02 04:43:56 · clientInfo Anthropic/ClaudeAI 1.0.0 · proto 2025-11-25→2025-11-25 · from US/IAD
+token · curl · 1 req / 0 tool calls · last 2026-09-02 04:43:30 · from TH/BKK
+token · memory-lab-2sep-dig · 8 req / 8 tool calls · last 2026-09-02 04:39:40 · from TH/BKK · last tool recall
+token · memory-lab-2sep-cli · 9 req / 7 tool calls · last 2026-09-02 04:39:40 · clientInfo memory-lab-2sep-cli 1 · proto 2025-06-18→2025-06-18 · from TH/BKK · last tool list_calls
+token · Claude Code · 4 req / 0 tool calls · last 2026-09-02 04:37:36 · clientInfo claude-code 2.1.258 · proto 2025-11-25→2025-11-25 · from TH/BKK
+token · memory-lab-2sep-smoke · 1 req / 1 tool calls · last 2026-09-02 04:37:25 · from TH/BKK · last tool memory_stats
+OAuth · smoke-test (curl) · 13 req / 9 tool calls · last 2026-09-02 04:37:25 · clientInfo smoke-test 1.0 · proto 2025-11-25→2025-11-25 · from TH/BKK · last tool forget
+$ tools/call list_calls {"limit": 12}  [129 ms]
+12 call(s), newest first
+2026-09-02 04:44:21 · tools/call list_clients · api-token:memory-lab-2sep-cli · from TH/BKK · 38 ms
+2026-09-02 04:43:56 · tools/list · oauth:HQan1KF3… · from US/IAD · 492 ms
+2026-09-02 04:43:56 · notifications/initialized · oauth:HQan1KF3… · from US/IAD · 494 ms
+2026-09-02 04:43:55 · initialize · oauth:HQan1KF3… · from US/IAD · 482 ms
+2026-09-02 04:43:54 · server/discover · oauth:HQan1KF3… · from US/IAD · 484 ms · ERROR method not found
+2026-09-02 04:43:52 · tools/list · oauth:HQan1KF3… · from US/IAD · 468 ms
+2026-09-02 04:43:51 · notifications/initialized · oauth:HQan1KF3… · from US/IAD · 501 ms
+2026-09-02 04:43:50 · initialize · oauth:HQan1KF3… · from US/IAD · 483 ms
+2026-09-02 04:43:50 · server/discover · oauth:HQan1KF3… · from US/IAD · 494 ms · ERROR method not found
+2026-09-02 04:43:30 · GET /api/access/clients · api-token:curl · from TH/BKK · 0 ms
+2026-09-02 04:39:40 · tools/call list_calls · api-token:memory-lab-2sep-cli · from TH/BKK · 49 ms
+2026-09-02 04:39:40 · tools/call list_clients · api-token:memory-lab-2sep-cli · from TH/BKK · 35 ms

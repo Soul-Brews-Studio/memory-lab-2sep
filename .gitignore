@@ -1,1 +1,9 @@
 .claude/INCUBATED_BY
+node_modules/
+.wrangler/
+.dev.vars
+.env
+*.local
+out/*.secret
+backup/*.sql
+.envrc

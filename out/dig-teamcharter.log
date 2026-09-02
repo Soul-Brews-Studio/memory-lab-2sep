@@ -1,0 +1,4 @@
+cd "." && BASE="https://memory-lab-2sep.laris.workers.dev" python3 scripts/dig.py "teamcharter"
+dig “teamcharter” → 4 variants ['teamcharter', 'team charter', 'charter', 'team'] · 4 recall/read calls · 615 ms · 2 memories
+881e97eb | (untitled) | 2026-09-02T04:39 | matched-via=query:charter,query:team,query:team charter,query:teamcharter
+3ff54a31 | (untitled) | 2026-09-02T04:39 | matched-via=query:charter,query:team,query:team charter

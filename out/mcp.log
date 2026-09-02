@@ -1,0 +1,28 @@
+$ initialize  [90 ms]
+{
+ "protocolVersion": "2025-06-18",
+ "capabilities": {
+  "tools": {
+   "listChanged": true
+  }
+ },
+ "serverInfo": {
+  "name": "memory-lab-2sep",
+  "version": "26.9.2"
+ },
+ "instructions": "One owner's memory on Cloudflare Workers + D1. remember/recall/forget for memories; list_clients and list_calls show who is connected and which methods were called from where (stateless ledger)."
+}
+$ tools/list  [137 ms]
+  remember       จดจำ
+  recall         ค้นหาความจำ (substring, ไทยได้)
+  read_memory    อ่านความจำหนึ่งรายการ
+  forget         ลบความจำ
+  list_memories  รายการความจำล่าสุด
+  memory_stats   สถิติ
+  list_clients   ใครเชื่อมต่ออยู่
+  list_calls     เมธอดอะไรถูกเรียก จากไหน
+  status         สถานะ
+$ tools/call recall {"query": "ความจำ", "limit": 5}  [195 ms]
+1 of 3 memories match “ความจำ”
+1. 75951482 · (untitled) · 2026-09-02 04:39 · by cli
+   memorylab: ความจำบน Cloudflare Workers + D1 ทำจริงได้ — one-click install, ติดตั้งบน claude.ai ด้วย OAuth (workshop 2 ก.ย. 2569)

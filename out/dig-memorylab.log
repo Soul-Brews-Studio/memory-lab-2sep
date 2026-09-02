@@ -1,0 +1,5 @@
+cd "." && BASE="https://memory-lab-2sep.laris.workers.dev" python3 scripts/dig.py "memorylab"
+dig “memorylab” → 4 variants ['memorylab', 'memory lab', 'memory', 'lab'] · 4 recall/read calls · 486 ms · 3 memories
+75951482 | (untitled) | 2026-09-02T04:39 | matched-via=query:lab,query:memory,query:memorylab
+3ff54a31 | (untitled) | 2026-09-02T04:39 | matched-via=query:lab,query:memory,query:memory lab
+881e97eb | (untitled) | 2026-09-02T04:39 | matched-via=query:memory

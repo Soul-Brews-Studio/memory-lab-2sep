@@ -1,0 +1,30 @@
+# memory-lab-2sep smoke → https://memory-lab-2sep.laris.workers.dev
+OK  GET /api/health — {"name":"memory-lab-2sep","product":"memory-lab-2sep","version":"26.9.2","status":"ok","connections24h":8,"claudeAi":"connected","calls24h":58}  [110 ms]
+OK  discovery: protected resource — https://memory-lab-2sep.laris.workers.dev/mcp  [64 ms]
+OK  discovery: authorization server — issuer=https://memory-lab-2sep.laris.workers.dev pkce=['S256']  [70 ms]
+OK  POST /mcp without a token → 401 + resource_metadata — Bearer realm="OAuth", resource_metadata="https://memory-lab-2sep.laris.workers.dev/.well-known/oauth-protected  [65 ms]
+OK  DCR: POST /oauth/register — client_id=QgDKo3KM…  [204 ms]
+OK  GET /authorize renders the approval page — 2665 bytes html  [95 ms]
+OK  POST /authorize wrong passphrase → 401, no redirect  [97 ms]
+OK  POST /authorize right passphrase → 302 with code — → http://localhost:6274/oauth/callback?code=…&state=xyz  [142 ms]
+OK  POST /oauth/token (PKCE) → access_token — expires_in=2592000 scope=memory:rw  [179 ms]
+OK  replaying the code → invalid_grant  [101 ms]
+OK  MCP initialize (Accept: text/event-stream) — server=memory-lab-2sep 26.9.2 proto echoed  [161 ms]
+OK  notifications/initialized → 202 empty  [194 ms]
+OK  tools/list — remember, recall, read_memory, forget, list_memories, memory_stats, list_clients, list_calls, status  [164 ms]
+OK  tools/call remember (Thai content) — id=cf9cb3ab  [227 ms]
+OK  tools/call recall 'ความจำ' (Thai mid-word substring) — 2 hit(s); first line: 2 of 4 memories match “ความจำ”  [245 ms]
+OK  tools/call recall 'CLOUDFLARE workers' (case-insensitive)  [242 ms]
+OK  tools/call recall miss → 0 hits, not an error  [171 ms]
+OK  tools/call list_clients — 9 client(s) in 24h | OAuth · smoke-test (curl) · 7 req / 4 tool calls · last 2026-09-02 04:51:47 · clientInfo smoke-test 1.0 · proto 2025-11-25→2025-11-25 · from TH/BKK · last tool recall | token · memory-lab-2sep-cli · 14 req / 12 tool calls · last 2026-09-02 04:47:53 · clientInfo memory-lab-2sep-c  [178 ms]
+OK  tools/call list_calls — 5 call(s), newest first | 2026-09-02 04:51:48 · tools/call list_clients · oauth:QgDKo3KM… · from TH/BKK · 105 ms | 2026-09-02 04:51:47 · tools/call recall · oauth:QgDKo3KM… · from TH/BKK · 102 ms | 2026-09-02 04:51:47 · tools/call recall · oauth:QgDKo3KM… · fro  [180 ms]
+OK  tools/call status — memory-lab-2sep 26.9.2 (memory-lab-2sep) — ok | memories: 4 | connections (24h): 9 — api-token 5, oauth 3, owner-session 1 · claude.ai: connected | calls (24h): 67 — tools/call recall ×16, initialize ×7, notifications/initialized ×7, tools/list ×7, tools/call list_calls ×6, tools/call list_clients ×5, tools/call remember ×5, server/discover ×4, tools/call status ×4, GET /api/overview ×2, GET /api/  [246 ms]
+OK  unknown tool → isError inside a 200 result  [176 ms]
+OK  tools/call forget (cleanup) — forgot cf9cb3ab  [207 ms]
+OK  static API_TOKEN door: memory_stats — 3 memories · first 2026-09-02T04:39:36.692Z · last 2026-09-02T04:39:37.881Z  [103 ms]
+OK  GET /api/overview (OAuth token) — clients=9 calls=50 access=3 claudeAi=connected  [200 ms]
+
+# latency (ms, this run)
+POST /mcp   n=14 min=65 median=180 max=246
+other       n=10 min=64 median=110 max=204
+# smoke: ALL PASS

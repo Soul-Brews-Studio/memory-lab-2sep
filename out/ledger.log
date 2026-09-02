@@ -1,0 +1,31 @@
+$ tools/call status {}  [118 ms]
+memory-lab-2sep 26.9.2 (memory-lab-2sep) — ok
+memories: 3
+connections (24h): 5 — api-token 4, oauth 1 · claude.ai: none
+calls (24h): 32 — tools/call recall ×12, tools/call remember ×4, initialize ×3, tools/list ×3, notifications/initialized ×2, GET /api/overview ×1, server/discover ×1, tools/call forget ×1, tools/call list_calls ×1, tools/call list_clients ×1, tools/call memory_stats ×1, tools/call no_such_tool ×1, tools/call status ×1
+from: TH ×32
+you are: token · memory-lab-2sep-cli
+$ tools/call list_clients {}  [183 ms]
+5 client(s) in 24h
+token · memory-lab-2sep-dig · 8 req / 8 tool calls · last 2026-09-02 04:39:40 · from TH/BKK · last tool recall
+token · memory-lab-2sep-cli · 7 req / 5 tool calls · last 2026-09-02 04:39:40 · clientInfo memory-lab-2sep-cli 1 · proto 2025-06-18→2025-06-18 · from TH/BKK · last tool status
+token · Claude Code · 4 req / 0 tool calls · last 2026-09-02 04:37:36 · clientInfo claude-code 2.1.258 · proto 2025-11-25→2025-11-25 · from TH/BKK
+token · memory-lab-2sep-smoke · 1 req / 1 tool calls · last 2026-09-02 04:37:25 · from TH/BKK · last tool memory_stats
+OAuth · smoke-test (curl) · 13 req / 9 tool calls · last 2026-09-02 04:37:25 · clientInfo smoke-test 1.0 · proto 2025-11-25→2025-11-25 · from TH/BKK · last tool forget
+$ tools/call list_calls {"limit": 15}  [160 ms]
+15 call(s), newest first
+2026-09-02 04:39:40 · tools/call list_clients · api-token:memory-lab-2sep-cli · from TH/BKK · 35 ms
+2026-09-02 04:39:40 · tools/call status · api-token:memory-lab-2sep-cli · from TH/BKK · 40 ms
+2026-09-02 04:39:40 · tools/call recall · api-token:memory-lab-2sep-dig · from TH/BKK · 35 ms
+2026-09-02 04:39:39 · tools/call recall · api-token:memory-lab-2sep-dig · from TH/BKK · 35 ms
+2026-09-02 04:39:39 · tools/call recall · api-token:memory-lab-2sep-dig · from TH/BKK · 35 ms
+2026-09-02 04:39:39 · tools/call recall · api-token:memory-lab-2sep-dig · from TH/BKK · 37 ms
+2026-09-02 04:39:39 · tools/call recall · api-token:memory-lab-2sep-dig · from TH/BKK · 51 ms
+2026-09-02 04:39:39 · tools/call recall · api-token:memory-lab-2sep-dig · from TH/BKK · 33 ms
+2026-09-02 04:39:39 · tools/call recall · api-token:memory-lab-2sep-dig · from TH/BKK · 36 ms
+2026-09-02 04:39:38 · tools/call recall · api-token:memory-lab-2sep-dig · from TH/BKK · 38 ms
+2026-09-02 04:39:38 · tools/call recall · api-token:memory-lab-2sep-cli · from TH/BKK · 41 ms
+2026-09-02 04:39:38 · tools/list · api-token:memory-lab-2sep-cli · from TH/BKK · 0 ms
+2026-09-02 04:39:38 · initialize · api-token:memory-lab-2sep-cli · from TH/BKK · 0 ms
+2026-09-02 04:39:37 · tools/call remember · api-token:memory-lab-2sep-cli · from TH/BKK · 37 ms
+2026-09-02 04:39:37 · tools/call remember · api-token:memory-lab-2sep-cli · from TH/BKK · 37 ms

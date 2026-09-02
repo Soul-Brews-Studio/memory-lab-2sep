@@ -1,0 +1,40 @@
+{
+  "name": "memory-lab-2sep",
+  "version": "26.9.2",
+  "description": "One-click Cloudflare Workers memory MCP with stateless client + method-call tracking (D1 only, zero runtime deps)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Soul-Brews-Studio/memory-lab-2sep.git"
+  },
+  "homepage": "https://github.com/Soul-Brews-Studio/memory-lab-2sep#readme",
+  "type": "module",
+  "scripts": {
+    "test": "bun test src",
+    "typecheck": "tsc --noEmit",
+    "check": "bun run typecheck && bun run test",
+    "dev": "wrangler dev",
+    "db:migrate:local": "wrangler d1 migrations apply DB --local",
+    "deploy": "node scripts/deploy.mjs",
+    "deploy:dry-run": "node scripts/deploy.mjs --dry-run"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "5.20260823.1",
+    "@types/bun": "1.4.0",
+    "typescript": "6.0.3",
+    "wrangler": "4.125.0"
+  },
+  "cloudflare": {
+    "bindings": {
+      "DB": {
+        "description": "D1 stores memories, OAuth clients/codes/tokens, and the stateless client + method-call ledger."
+      },
+      "OWNER_PASSPHRASE": {
+        "description": "Owner passphrase. Unlocks the dashboard and approves MCP clients on the OAuth page (claude.ai). Generate: openssl rand -base64 32"
+      },
+      "API_TOKEN": {
+        "description": "Optional static bearer for Claude Code / Codex / curl. Leave blank to allow OAuth only."
+      }
+    }
+  }
+}
